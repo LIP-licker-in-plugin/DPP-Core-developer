@@ -5,13 +5,13 @@ plugins {
 }
 
 configurations {
-    jar.archiveName = 'DPP-Core-_' + name + '-SNAPSHOT.jar'
-    shadowJar.archiveName = 'DPP-Core-_' + name + '-SNAPSHOT.jar'
+    jar.archiveName = 'LP-Core-_' + name + '-SNAPSHOT.jar'
+    shadowJar.archiveName = 'LP-Core-_' + name + '-SNAPSHOT.jar'
 }
 jar {
     finalizedBy shadowJar
     manifest {
-        attributes 'Main-Class': 'com.darksoldier1404.dppc.DPPCore'
+        attributes 'Main-Class': 'com.licker2689.lpc.LPCore'
     }
     destinationDirectory.set(file("$rootDir/jars"))
 }
@@ -69,14 +69,23 @@ shadowJar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.darksoldier1404.dppc'
-            artifactId = 'DPP-Core'
-            version = '1.12.2-SNAPSHOT'
-            artifact '../jars/'+ jar.archiveName
+            groupId = 'com.licker2689'
+            artifactId = 'LP-Core'
+            version = 'R0.1'
+            artifact ('../jars/' + "LP-Core-_v1_12_2-SNAPSHOT.jar")
+                    {classifier '1.12.2'}
         }
     }
     repositories {
-        mavenLocal()
+        maven {
+            url "http://licker2689.kro.kr:8081/repository/lip-release/"
+            allowInsecureProtocol = true
+                credentials({
+                username = "lickernoy"
+                password = "licker1389"
+                }
+            )
+        }
     }
 }
 compileJava.options.encoding = 'UTF-8'
@@ -96,10 +105,10 @@ version = '2.0.6.68'
 repositories {
     mavenCentral()
     mavenLocal()
-    maven {
+    maven{ url = 'https://repo.papermc.io/repository/maven-public/'}
+   maven {
         url "https://org.bstats/bstats-bukkit"
     }
-    maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
         content {
@@ -117,10 +126,10 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     compileOnly 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
-    compileOnly 'org.spigotmc:spigot:1.12.2-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
+    compileOnly 'org.spigotmc:spigot:1.12.2-R0.1-SNAPSHOT'
     compileOnly 'org.bstats:bstats-bukkit:3.0.0'
     compileOnly 'net.essentialsx:EssentialsX:2.19.7' 
-     implementation group: 'com.github.twitch4j', name: 'twitch4j', version: '1.10.0'
+    implementation group: 'com.github.twitch4j', name: 'twitch4j', version: '1.10.0'
     implementation 'com.github.philippheuer.events4j:events4j-api:0.10.0'
     implementation 'com.github.philippheuer.events4j:events4j-core:0.10.0'
     implementation 'com.github.philippheuer.events4j:events4j-handler-simple:0.10.0'

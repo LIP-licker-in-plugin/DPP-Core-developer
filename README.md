@@ -1,6 +1,6 @@
-# DPP-Core-developer
+# LP-Core-developer
  
-DPP-core 의 개발자 버전입니다.
+LP-Core 의 개발자 버전입니다.
 
 spigot을 메이븐 로컬에 buildTools로 배포해주셔야 하며
 

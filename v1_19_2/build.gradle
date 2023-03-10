@@ -5,13 +5,13 @@ plugins {
 }
 
 configurations {
-    jar.archiveName = 'DPP-Core-_v1_19_2-SNAPSHOT.jar'
-    shadowJar.archiveName = 'DPP-Core-_v1_19_2-SNAPSHOT.jar'
+    jar.archiveName = 'LP-Core-_v1_19_2-SNAPSHOT.jar'
+    shadowJar.archiveName = 'LP-Core-_v1_19_2-SNAPSHOT.jar'
 }
 jar {
     finalizedBy shadowJar
     manifest {
-        attributes 'Main-Class': 'com.darksoldier1404.dppc.DPPCore'
+        attributes 'Main-Class': 'com.darksoldier1404.LPC.LPCore'
     }
     destinationDirectory.set(file("$rootDir/jars"))
 }
@@ -71,14 +71,23 @@ shadowJar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.darksoldier1404.dppc'
-            artifactId = 'DPP-Core'
-            version = '1.19.2-SNAPSHOT'
-            artifact 'jars/'+ jar.archiveName
+            groupId = 'com.licker2689'
+            artifactId = 'LP-Core'
+            version = 'R0.1'
+            artifact ('../jars/' + "LP-Core-_v1_19_2-SNAPSHOT.jar")
+                    {classifier '1.19.2'}
         }
     }
     repositories {
-        mavenLocal()
+        maven {
+            url "http://licker2689.kro.kr:8081/repository/lip-release/"
+            allowInsecureProtocol = true
+            credentials({
+                username = "lickernoy"
+                password = "licker1389"
+            }
+            )
+        }
     }
 }
 group 'github.com/darksoldier1404'
@@ -120,13 +129,13 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     implementation 'org.apache.commons:commons-lang3:3.12.0'
     compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
-    compileOnly 'org.spigotmc:spigot:1.19.2-R0.1-SNAPSHOT' // The full Spigot server with no shadowing. Requires mavenLocal.
+    compileOnly 'org.bukkit:craftbukkit:1.19.2-R0.1-SNAPSHOT'
     compileOnly 'org.bstats:bstats-bukkit:3.0.0'
     compileOnly 'com.mojang:authlib:3.2.38'
     compileOnly 'com.mojang:brigadier:1.0.18'
     compileOnly 'com.mojang:datafixerupper:4.0.26'
     compileOnly 'net.essentialsx:EssentialsX:2.19.3'
-     implementation group: 'com.github.twitch4j', name: 'twitch4j', version: '1.10.0'
+    implementation group: 'com.github.twitch4j', name: 'twitch4j', version: '1.10.0'
     implementation 'com.github.philippheuer.events4j:events4j-api:0.10.0'
     implementation 'com.github.philippheuer.events4j:events4j-core:0.10.0'
     implementation 'com.github.philippheuer.events4j:events4j-handler-simple:0.10.0'
@@ -137,6 +146,8 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'net.dv8tion:JDA:5.0.0-alpha.22'
+    compileOnly 'io.github.bruce0203:guiapi:7bd22388'
+
 }
 test {
     useJUnitPlatform()

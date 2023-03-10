@@ -5,13 +5,13 @@ plugins {
 }
 
 configurations {
-    jar.archiveName = 'DPP-Core-_' + name + '-SNAPSHOT.jar'
-    shadowJar.archiveName = 'DPP-Core-_' + name + '-SNAPSHOT.jar'
+    jar.archiveName = 'LP-Core-_' + name + '-SNAPSHOT.jar'
+    shadowJar.archiveName = 'LP-Core-_' + name + '-SNAPSHOT.jar'
 }
 jar {
     finalizedBy shadowJar
     manifest {
-        attributes 'Main-Class': 'com.darksoldier1404.dppc.DPPCore'
+        attributes 'Main-Class': 'com.darksoldier1404.LPC.LPCore'
     }
     destinationDirectory.set(file("$rootDir/jars"))
 }
@@ -69,8 +69,8 @@ shadowJar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.darksoldier1404.dppc'
-            artifactId = 'DPP-Core'
+            groupId = 'com.darksoldier1404.LPC'
+            artifactId = 'LP-Core'
             version = '1.13.2-SNAPSHOT'
             artifact '../jars/'+ jar.archiveName
         }
@@ -110,15 +110,22 @@ repositories {
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url = 'https://oss.sonatype.org/content/repositories/central' }
     maven { url = 'https://repo.essentialsx.net/releases/' }
+    maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
+    maven { url = uri("https://jitpack.io") }
+    maven {
+        name = "Mojang"
+        url = uri("https://libraries.minecraft.net/")
+    }
+    maven {
+        name = "Spigot"
+        url = uri("https://repo.dmulloy2.net/repository/public/")
+    }
 }
 
 dependencies {
     implementation 'org.jetbrains:annotations:23.0.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-    compileOnly 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
-    compileOnly 'org.spigotmc:spigot:1.13.2-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
-
     compileOnly 'org.bstats:bstats-bukkit:3.0.0'
     compileOnly 'net.essentialsx:EssentialsX:2.19.7' 
     implementation 'com.github.twitch4j:twitch4j:1.12.0'

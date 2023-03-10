@@ -30,3 +30,5 @@ Settings:
   twitch-chatbot-accessToken: ""
   # 아이디, 토큰 생성 : https://twitchtokengenerator.com/
 
+  use-discord-api: true
+  discord-bot-token:

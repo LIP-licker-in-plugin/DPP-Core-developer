@@ -1,15 +1,15 @@
-name: DPP-Core
+name: LP-Core
 version: 2.0.6.68
-main: com.darksoldier1404.dppc.DPPCore
-authors: [ DEAD_POOLIO_ ]
+main: com.licker2689.lppc.LPPCore
+authors: [LICKER2689]
 api-version: 1.19
 loadbefore:
   - Essentials
   - PlaceholderAPI
   - ProtocolLib
-  - DP-LegendaryCash
-  - DP-VirtualStorage
-  - DP-SimplePrefix
+  - LP-LegendaryCash
+  - LP-VirtualStorage
+  - LP-SimplePrefix
 commands:
-  dppc:
+  lppc:
 description: this plugin is include AnvilGUI from https://github.com/WesJD/AnvilGUI

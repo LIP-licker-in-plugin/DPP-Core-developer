@@ -1,4 +1,4 @@
-rootProject.name = 'DPP-Core'
+rootProject.name = 'LP-Core-developer'
 include 'v1_12_2'
 include 'V1_13_2'
 include 'V1_14_4'
