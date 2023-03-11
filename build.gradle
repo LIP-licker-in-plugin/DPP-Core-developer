@@ -68,6 +68,7 @@ shadowJar {
     }
     destinationDirectory.set(file("$rootDir/jars"))
 }
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -75,7 +76,7 @@ publishing {
             artifactId = 'LP-Core'
             version = 'R0.1'
             artifact ('jars/' + jar.archiveName){
-                classfier '1.19.3'
+                classifier '1.19.3'
             }
         }
     }
