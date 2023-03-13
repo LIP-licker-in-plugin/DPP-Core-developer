@@ -146,7 +146,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'net.dv8tion:JDA:5.0.0-alpha.22'
-    compileOnly 'io.github.bruce0203:guiapi:7bd22388'
+    compileOnly 'io.github.bruce0203:guiapi:59f18600'
 
 }
 test {
