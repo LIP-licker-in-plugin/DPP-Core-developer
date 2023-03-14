@@ -1,13 +1,14 @@
 package com.licker2689.lpc;
 
-import com.licker2689.lpc.api.placeholder.DPHManager;
+import com.earth2me.essentials.Essentials;
+import com.licker2689.lpc.api.discord.DiscordAPI;
+import com.licker2689.lpc.api.placeholder.LPHManager;
 import com.licker2689.lpc.api.twitch.TwitchAPI;
-import com.licker2689.lpc.commands.DUCCommand;
+import com.licker2689.lpc.commands.LPCCommand;
 import com.licker2689.lpc.enums.PluginName;
 import com.licker2689.lpc.utils.ConfigUtils;
 import com.licker2689.lpc.utils.PluginUtil;
 import com.licker2689.lpc.utils.SchedulerUtils;
-import com.earth2me.essentials.Essentials;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -24,7 +25,7 @@ public class LPCore extends JavaPlugin {
     public Logger log;
     public final String prefix = "§f[ §eLPC §f] ";
     public final Map<PluginName, JavaPlugin> enabledPlugins = new HashMap<>();
-    public DPHManager dphm;
+    public LPHManager lphm;
     public Essentials ess;
     public TwitchAPI tapi;
 
@@ -42,12 +43,17 @@ public class LPCore extends JavaPlugin {
         log = getLogger();
         log.info(prefix + "LP-Core 플러그인 활성화.");
         config = ConfigUtils.loadDefaultPluginConfig(plugin);
-        dphm = new DPHManager();
+        lphm = new LPHManager();
         PluginUtil.loadALLPlugins();
         if (config.getBoolean("Settings.use-twitch-api")) {
             TwitchAPI.init();
-        }else {
-            log.warning(prefix + "TwitchAPI를 사용이 비활성화 되어있습니다.");
+        } else {
+            log.warning(prefix + "TwitchAPI 사용이 비활성화 되어있습니다.");
+        }
+        if (config.getBoolean("Settings.use-discord-api")) {
+            DiscordAPI.init();
+        } else {
+            log.warning(prefix + "DiscordAPI 사용이 비활성화 되어있습니다.");
         }
         Plugin pl = getServer().getPluginManager().getPlugin("Essentials");
         if (pl == null) {
@@ -58,7 +64,7 @@ public class LPCore extends JavaPlugin {
             ess = (Essentials) pl;
         }
         Bukkit.getScheduler().runTaskLater(plugin, () -> enabledPlugins.keySet().forEach(SchedulerUtils::initUpdateChecker), 1200L);
-        getCommand("LPC").setExecutor(new DUCCommand());
+        getCommand("lpc").setExecutor(new LPCCommand());
     }
 
     @Override

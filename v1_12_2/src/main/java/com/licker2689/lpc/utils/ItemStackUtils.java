@@ -1,4 +1,3 @@
-
 package com.licker2689.lpc.utils;
 
 import com.licker2689.lpc.LPCore;
@@ -13,7 +12,7 @@ public class ItemStackUtils {
     private static final LPCore plugin = LPCore.getInstance();
 
     public static ItemStack getPlayerHead(Player p) {
-        ItemStack head = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
+        ItemStack head = new ItemStack(Material.PLAYER_HEAD, 1, (short) SkullType.PLAYER.ordinal());
         SkullMeta sm = (SkullMeta) head.getItemMeta();
         sm.setOwner(p.getName());
         head.setItemMeta(sm);

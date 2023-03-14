@@ -1,7 +1,7 @@
 package com.licker2689.lpc.api.essentials;
 
-import com.licker2689.lpc.LPCore;
 import com.earth2me.essentials.Essentials;
+import com.licker2689.lpc.LPCore;
 import net.ess3.api.MaxMoneyException;
 import org.bukkit.entity.Player;
 

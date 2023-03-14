@@ -22,7 +22,7 @@ public class SchedulerUtils {
         } catch (Exception ignored) {
 
         }
-        tasks.put(name, core.getServer().getScheduler().runTaskTimer(core, () -> UpdateChecker.check(core.enabledPlugins.get(name)), 0L, PluginUtil.getUpdateCheckInterval(name) * 20L));
+        //tasks.put(name, core.getServer().getScheduler().runTaskTimer(core, () -> UpdateChecker.check(core.enabledPlugins.get(name)), 0L, PluginUtil.getUpdateCheckInterval(name) * 20L));
     }
 
     public static void cancelUpdateChecker(JavaPlugin plugin) {

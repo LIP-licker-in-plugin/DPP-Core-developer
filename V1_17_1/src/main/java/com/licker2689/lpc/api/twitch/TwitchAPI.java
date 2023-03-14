@@ -1,6 +1,5 @@
 package com.licker2689.lpc.api.twitch;
 
-import com.licker2689.lpc.LPCore;
 import com.github.philippheuer.credentialmanager.domain.OAuth2Credential;
 import com.github.philippheuer.events4j.simple.SimpleEventHandler;
 import com.github.twitch4j.TwitchClient;
@@ -9,6 +8,7 @@ import com.github.twitch4j.chat.events.channel.ChannelMessageEvent;
 import com.github.twitch4j.chat.events.channel.DonationEvent;
 import com.github.twitch4j.events.ChannelGoLiveEvent;
 import com.github.twitch4j.events.ChannelGoOfflineEvent;
+import com.licker2689.lpc.LPCore;
 import org.bukkit.Bukkit;
 
 @SuppressWarnings("unused")

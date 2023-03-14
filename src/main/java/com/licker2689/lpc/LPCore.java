@@ -1,7 +1,7 @@
 package com.licker2689.lpc;
 
 import com.licker2689.lpc.api.discord.DiscordAPI;
-import com.licker2689.lpc.api.placeholder.DPHManager;
+import com.licker2689.lpc.api.placeholder.LPHManager;
 import com.licker2689.lpc.api.twitch.TwitchAPI;
 import com.licker2689.lpc.commands.LPCCommand;
 import com.licker2689.lpc.enums.PluginName;
@@ -25,7 +25,7 @@ public class LPCore extends JavaPlugin {
     public Logger log;
     public final String prefix = "§f[ §eLPC §f] ";
     public final Map<PluginName, JavaPlugin> enabledPlugins = new HashMap<>();
-    public DPHManager dphm;
+    public LPHManager lphm;
     public Essentials ess;
     public TwitchAPI tapi;
 
@@ -43,7 +43,7 @@ public class LPCore extends JavaPlugin {
         log = getLogger();
         log.info(prefix + "LP-Core 플러그인 활성화.");
         config = ConfigUtils.loadDefaultPluginConfig(plugin);
-        dphm = new DPHManager();
+        lphm = new LPHManager();
         PluginUtil.loadALLPlugins();
         if (config.getBoolean("Settings.use-twitch-api")) {
             TwitchAPI.init();

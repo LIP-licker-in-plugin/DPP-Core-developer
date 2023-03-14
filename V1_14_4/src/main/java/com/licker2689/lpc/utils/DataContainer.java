@@ -1,6 +1,6 @@
 package com.licker2689.lpc.utils;
 
-import com.licker2689.lpc.lang.DLang;
+import com.licker2689.lpc.lang.LLang;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
@@ -13,7 +13,7 @@ import java.util.UUID;
 public class DataContainer {
     private final JavaPlugin plugin;
     private YamlConfiguration config;
-    private DLang lang;
+    private LLang lang;
     private String prefix;
     private final Map<String, Object> data = new HashMap<>();
     private boolean useDLang = false;
@@ -22,7 +22,7 @@ public class DataContainer {
         this.plugin = plugin;
         this.config = ConfigUtils.loadDefaultPluginConfig(plugin);
         this.prefix = ColorUtils.applyColor(config.getString("Settings.prefix"));
-        this.lang = new DLang(config.getString("Settings.Lang") == null ? "Korean" : config.getString("Settings.Lang"), plugin);
+        this.lang = new LLang(config.getString("Settings.Lang") == null ? "Korean" : config.getString("Settings.Lang"), plugin);
         if (config.getString("Settings.Lang") == null) {
             config.set("Settings.Lang", "Korean");
         }
@@ -34,7 +34,7 @@ public class DataContainer {
         this.prefix = ColorUtils.applyColor(config.getString("Settings.prefix"));
         this.useDLang = useDLang;
         if (this.useDLang) {
-            this.lang = new DLang(config.getString("Settings.Lang") == null ? "Korean" : config.getString("Settings.Lang"), plugin);
+            this.lang = new LLang(config.getString("Settings.Lang") == null ? "Korean" : config.getString("Settings.Lang"), plugin);
             if (config.getString("Settings.Lang") == null) {
                 config.set("Settings.Lang", "Korean");
             }
@@ -57,11 +57,11 @@ public class DataContainer {
         this.prefix = prefix;
     }
 
-    public DLang getLang() {
+    public LLang getLang() {
         return lang;
     }
 
-    public void setLang(DLang lang) {
+    public void setLang(LLang lang) {
         this.lang = lang;
     }
 
@@ -141,7 +141,7 @@ public class DataContainer {
         config = ConfigUtils.reloadPluginConfig(plugin, config);
         prefix = ColorUtils.applyColor(config.getString("Settings.prefix"));
         if (useDLang) {
-            lang = new DLang(config.getString("Settings.Lang") == null ? "Korean" : config.getString("Settings.Lang"), plugin);
+            lang = new LLang(config.getString("Settings.Lang") == null ? "Korean" : config.getString("Settings.Lang"), plugin);
             if (config.getString("Settings.Lang") == null) {
                 config.set("Settings.Lang", "Korean");
             }
