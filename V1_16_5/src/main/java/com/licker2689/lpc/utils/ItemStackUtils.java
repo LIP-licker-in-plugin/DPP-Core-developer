@@ -1,4 +1,3 @@
-
 package com.licker2689.lpc.utils;
 
 import com.licker2689.lpc.LPCore;

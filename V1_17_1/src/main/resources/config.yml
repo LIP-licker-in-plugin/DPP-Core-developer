@@ -8,17 +8,17 @@ Settings:
   # 해당 사이트에서 지원하는 통계의 기능으로 저는 얼마나 많은 서버에서 해당 플러그인을 사용하는지 알 수 있습니다. XD
   use-metrics: true
 
-  # 업데이트 확인에서 제외할 플러그인 목록입니다. (DP-Plugins의 플러그인만 등록시켜주세요.)
+  # 업데이트 확인에서 제외할 플러그인 목록입니다. (LP-Plugins의 플러그인만 등록시켜주세요.)
   update-check-excluded: [ ]
 
   use-metrics-excluded: [ ]
 
   # ex)
 #  update-check-excluded:
-#    - DP-VirtualStorage
+#    - LP-VirtualStorage
 
 #  use-metrics-excluded:
-#    - DP-VirtualStorage
+#    - LP-VirtualStorage
 
   use-twitch-api: false
   twitch-api-key: ""

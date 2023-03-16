@@ -1,4 +1,4 @@
-name: LPP-Core
+name: LP-Core
 on:
   push:
 jobs:

@@ -4,7 +4,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagString;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_18_R2.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_19_R2.inventory.CraftItemStack;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
@@ -19,7 +19,7 @@ import java.util.Map;
 public class NBT {
     
     public static NBTTagCompound getTagCompound(net.minecraft.world.item.ItemStack item) {
-        return item.s() ? item.t() : new NBTTagCompound();
+        return item.t() ? item.u() : new NBTTagCompound();
     }
 
     /**
@@ -56,7 +56,7 @@ public class NBT {
     public static ItemStack removeAllTags(ItemStack objitem) {
         net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
         NBTTagCompound ntc = getTagCompound(item);
-        for (String key : ntc.d()) {
+        for (String key : ntc.e()) {
             item.c(key);
         }
         item.c(ntc);
@@ -245,11 +245,11 @@ public class NBT {
     public static Map<String, String> getAllStringTag(ItemStack objitem) {
         net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
         NBTTagCompound ntc = getTagCompound(item);
-        if (ntc.d().size() == 0) {
+        if (ntc.e().size() == 0) {
             return null;
         }
         Map<String, String> tags = new HashMap<>();
-        for (String key : ntc.d()) {
+        for (String key : ntc.e()) {
             tags.put(key, ntc.c(key).toString());
         }
         return tags;

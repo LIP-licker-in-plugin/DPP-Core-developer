@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
-      <module name="DPP-Core" target="17" />
-      <module name="DPP-Core.main" target="17" />
-      <module name="DPP-Core.test" target="17" />
-      <module name="DPP-Core.v1_18_1" target="17" />
-      <module name="DPP-Core.v1_18_1.main" target="17" />
-      <module name="DPP-Core.v1_18_1.test" target="17" />
-      <module name="DPP-Core.v1_18_2" target="17" />
-      <module name="DPP-Core.v1_18_2.main" target="17" />
-      <module name="DPP-Core.v1_18_2.test" target="17" />
-      <module name="DPP-Core.v1_19_2" target="17" />
-      <module name="DPP-Core.v1_19_2.main" target="17" />
-      <module name="DPP-Core.v1_19_2.test" target="17" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>

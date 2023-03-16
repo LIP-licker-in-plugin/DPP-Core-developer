@@ -111,7 +111,7 @@ repositories {
     }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-        content {
+        content{\
             includeGroup 'org.bukkit'
             includeGroup 'org.spigotmc'
         }

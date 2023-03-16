@@ -25,16 +25,21 @@ public class LPCCommand implements CommandExecutor {
             return false;
         }
         if (args[0].equalsIgnoreCase("uc")) {
+            if (args[0].equalsIgnoreCase("uc")) {
             if (sender instanceof Player) {
                 Player p = (Player) sender;
-                p.sendMessage(plugin.prefix + "설치된 모든 DP-Plugins 플러그인 업데이트 확인...");
-                p.sendMessage(plugin.prefix + "Checking for all DP-Plugins update info...");
-                plugin.enabledPlugins.values().forEach(o -> UpdateChecker.check(o, p));
-            } else {
-                sender.sendMessage(plugin.prefix + "설치된 모든 DP-Plugins 플러그인 업데이트 확인...");
-                sender.sendMessage(plugin.prefix + "Checking for all DP-Plugins update info...");
-                plugin.enabledPlugins.values().forEach(UpdateChecker::check);
-            }
+                p.sendMessage("Lp코어 활성화 상태");
+//                p.sendMessage(plugin.prefix + "설치된 모든 LP-Plugins 플러그인 업데이트 확인...");
+//                p.sendMessage(plugin.prefix + "Checking for all LP-Plugins update info...");
+//                plugin.enabledPlugins.values().forEach(o -> UpdateChecker.check(o, p));
+            } 
+//            else {
+//                sender.sendMessage(plugin.prefix + "설치된 모든 LP-Plugins 플러그인 업데이트 확인...");
+//                sender.sendMessage(plugin.prefix + "Checking for all LP-Plugins update info...");
+//                plugin.enabledPlugins.values().forEach(UpdateChecker::check);
+//            }
+            
+        }
         }
         return false;
     }
