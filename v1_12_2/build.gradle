@@ -100,7 +100,7 @@ build {
 }
 
 group 'github.com/licker2689'
-version = '2.0.6.68'
+version = '2.0.6.70'
 
 repositories {
     mavenCentral()
