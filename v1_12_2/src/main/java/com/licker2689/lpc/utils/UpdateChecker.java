@@ -15,7 +15,7 @@ public class UpdateChecker {
 //        String currentVersion = plugin.getDescription().getVersion();
 //        String pluginName = plugin.getDescription().getName();
 //            try {
-//                HttpURLConnection connection = (HttpURLConnection) new URL("https://raw.githubusercontent.com/darksoldier1404/" + pluginName + "/master/src/main/resources/plugin.yml").openConnection();
+//                HttpURLConnection connection = (HttpURLConnection) new URL("https://raw.githubusercontent.com/licker2689/" + pluginName + "/master/src/main/resources/plugin.yml").openConnection();
 //                connection.connect();
 //                String rr = new BufferedReader(new InputStreamReader(connection.getInputStream())).lines().collect(Collectors.toList()).get(1).split(" ")[1];
 //                if (!currentVersion.equals(rr)) {
@@ -39,7 +39,7 @@ public class UpdateChecker {
 //        String currentVersion = plugin.getDescription().getVersion();
 //        String pluginName = plugin.getDescription().getName();
 //            try {
-//                HttpURLConnection connection = (HttpURLConnection) new URL("https://raw.githubusercontent.com/darksoldier1404/" + pluginName + "/master/src/main/resources/plugin.yml").openConnection();
+//                HttpURLConnection connection = (HttpURLConnection) new URL("https://raw.githubusercontent.com/licker2689/" + pluginName + "/master/src/main/resources/plugin.yml").openConnection();
 //                connection.connect();
 //                String rr = new BufferedReader(new InputStreamReader(connection.getInputStream())).lines().collect(Collectors.toList()).get(1).split(" ")[1];
 //                if (!currentVersion.equals(rr)) {

@@ -99,7 +99,7 @@ build {
     targetCompatibility = 1.8
 }
 
-group 'github.com/darksoldier1404'
+group 'github.com/licker2689'
 version = '2.0.6.68'
 
 repositories {
@@ -119,6 +119,9 @@ repositories {
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url = 'https://oss.sonatype.org/content/repositories/central' }
     maven { url = 'https://repo.essentialsx.net/releases/' }
+maven { url = 'https://licker2689.kro.kr/maven-releases/'
+            allowInsecureProtocol =true
+    }
 }
 
 dependencies {

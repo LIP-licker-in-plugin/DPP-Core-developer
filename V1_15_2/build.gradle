@@ -11,7 +11,7 @@ configurations {
 jar {
     finalizedBy shadowJar
     manifest {
-        attributes 'Main-Class': 'com.darksoldier1404.LPC.LPCore'
+        attributes 'Main-Class': 'com.licker2689.LPC.LPCore'
     }
     destinationDirectory.set(file("$rootDir/jars"))
 }
@@ -69,7 +69,7 @@ shadowJar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.darksoldier1404.LPC'
+            groupId = 'com.licker2689.LPC'
             artifactId = 'LP-Core'
             version = '1.15.2-SNAPSHOT'
             artifact '../jars/'+ jar.archiveName
@@ -90,7 +90,7 @@ build {
     targetCompatibility = 1.8
 }
 
-group 'github.com/darksoldier1404'
+group 'github.com/licker2689'
 version = '2.0.6.68'
 
 repositories {
@@ -110,6 +110,9 @@ repositories {
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url = 'https://oss.sonatype.org/content/repositories/central' }
     maven { url = 'https://repo.essentialsx.net/releases/' }
+maven { url = 'https://licker2689.kro.kr/maven-releases/'
+            allowInsecureProtocol =true
+    }
 }
 
 dependencies {
