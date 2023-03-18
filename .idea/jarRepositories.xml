@@ -71,5 +71,15 @@
       <option name="name" value="maven8" />
       <option name="url" value="https://jitpack.io" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven7" />
+      <option name="name" value="maven7" />
+      <option name="url" value="https://licker2689.kro.kr/maven-releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven7" />
+      <option name="name" value="maven7" />
+      <option name="url" value="https://licker2689.kro.kr:8081/maven-releases/" />
+    </remote-repository>
   </component>
 </project>
