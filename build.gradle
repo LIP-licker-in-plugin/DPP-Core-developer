@@ -156,9 +156,7 @@ repositories {
     maven { url = 'http://licker2689.kro.kr:8081/maven-releases/'
             allowInsecureProtocol =true
     }
-    maven {
-        url "https://org.bstats/bstats-bukkit"
-    }
+
 }
 
 dependencies {

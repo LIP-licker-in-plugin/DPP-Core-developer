@@ -103,9 +103,7 @@ build {
 repositories {
     mavenCentral()
     mavenLocal()
-    maven {
-        url "https://org.bstats/bstats-bukkit"
-    }
+
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
