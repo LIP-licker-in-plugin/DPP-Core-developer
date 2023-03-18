@@ -119,7 +119,7 @@ repositories {
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url = 'https://oss.sonatype.org/content/repositories/central' }
     maven { url = 'https://repo.essentialsx.net/releases/' }
-maven { url = 'https://licker2689.kro.kr/maven-releases/'
+maven { url = 'https://licker2689.kro.kr:8081/maven-releases/'
             allowInsecureProtocol =true
     }
 }
