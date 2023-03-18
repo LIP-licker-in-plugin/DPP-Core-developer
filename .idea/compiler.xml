@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="LP-Core-developer" target="17" />
+      <module name="LP-Core-developer.main" target="17" />
+      <module name="LP-Core-developer.test" target="17" />
+      <module name="LP-Core-developer.v1_18_1" target="17" />
+      <module name="LP-Core-developer.v1_18_1.main" target="17" />
+      <module name="LP-Core-developer.v1_18_1.test" target="17" />
+      <module name="LP-Core-developer.v1_18_2" target="17" />
+      <module name="LP-Core-developer.v1_18_2.main" target="17" />
+      <module name="LP-Core-developer.v1_18_2.test" target="17" />
+      <module name="LP-Core-developer.v1_19_2" target="17" />
+      <module name="LP-Core-developer.v1_19_2.main" target="17" />
+      <module name="LP-Core-developer.v1_19_2.test" target="17" />
+      <module name="LP-Core-developer.v1_19_3" target="17" />
+      <module name="LP-Core-developer.v1_19_3.main" target="17" />
+      <module name="LP-Core-developer.v1_19_3.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
