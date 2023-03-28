@@ -81,5 +81,15 @@
       <option name="name" value="maven7" />
       <option name="url" value="https://licker2689.kro.kr:8081/maven-releases/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven6" />
+      <option name="name" value="maven6" />
+      <option name="url" value="http://licker2689.kro.kr:8081/repository/maven-releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven7" />
+      <option name="name" value="maven7" />
+      <option name="url" value="http://licker2689.kro.kr:8081/p/maven-releases/" />
+    </remote-repository>
   </component>
 </project>

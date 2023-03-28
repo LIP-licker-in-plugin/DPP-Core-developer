@@ -82,7 +82,11 @@ publishing {
         maven {
             url "http://licker2689.kro.kr:8081/repository/lip-release/"
             allowInsecureProtocol = true
-
+            credentials({
+                username = "lickernoy"
+                password = "licker1389"
+            }
+            )
         }
     }
 }
@@ -103,7 +107,6 @@ build {
 repositories {
     mavenCentral()
     mavenLocal()
-
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
@@ -115,7 +118,7 @@ repositories {
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url = 'https://oss.sonatype.org/content/repositories/central' }
     maven { url = 'https://repo.essentialsx.net/releases/' }
-maven { url = 'http://licker2689.kro.kr:8081/repository/maven-releases/'
+    maven { url = 'http://licker2689.kro.kr:8081/repository/maven-releases/'
             allowInsecureProtocol =true
     }
 }
@@ -125,8 +128,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     implementation 'org.apache.commons:commons-lang3:3.12.0'
-    compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
-    compileOnly 'org.bukkit:craftbukkit:1.19.2-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
+    compileOnly 'org.bukkit:craftbukkit:1.19.3-R0.1-SNAPSHOT'
     compileOnly 'org.bstats:bstats-bukkit:3.0.0'
     compileOnly 'com.mojang:authlib:3.2.38'
     compileOnly 'com.mojang:brigadier:1.0.18'
