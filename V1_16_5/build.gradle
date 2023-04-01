@@ -94,9 +94,9 @@ group 'github.com/licker2689'
 version = '2.0.6.70'
 
 repositories {
-    mavenCentral()
+   mavenCentral()
+    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.16.5/' }
     mavenLocal()
-
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
@@ -133,6 +133,8 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'net.dv8tion:JDA:5.0.0-alpha.22'
+
 }
 
 test {

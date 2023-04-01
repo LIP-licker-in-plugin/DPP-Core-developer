@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24f44bb2-9e90-4bdf-9e11-52dc92ede417" name="변경" comment="fix : fix maven url">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/LP-Core-developer.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/LP-Core-developer.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/v1_18_1/LP-Core-developer.v1_18_1.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/v1_18_1/LP-Core-developer.v1_18_1.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/v1_19_2/LP-Core-developer.v1_19_2.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/v1_19_2/LP-Core-developer.v1_19_2.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/v1_19_3/LP-Core-developer.v1_19_3.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/v1_19_3/LP-Core-developer.v1_19_3.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1_12_2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/v1_12_2/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1_19_3/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19_3/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1_19_3/src/main/java/net/wesjd/anvilgui/version/Wrapper1_19_R2.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19_3/src/main/java/net/wesjd/anvilgui/version/Wrapper1_19_R2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679116739118</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix : fix maven url">
+      <created>1680015364013</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680015364013</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
