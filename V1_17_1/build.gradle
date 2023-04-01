@@ -112,6 +112,10 @@ repositories {
         url = 'http://licker2689.kro.kr:8081/repository/maven-releases/'
         allowInsecureProtocol = true
     }
+    maven {
+        url = 'http://licker2689.kro.kr:8081/repository/lip-releases/'
+        allowInsecureProtocol = true
+    }
 }
 
 dependencies {
