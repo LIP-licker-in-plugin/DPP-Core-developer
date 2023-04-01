@@ -1,17 +1,8 @@
 package com.licker2689.lpc.utils;
 
 import com.licker2689.lpc.LPCore;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 @SuppressWarnings("all")
 public class UpdateChecker {

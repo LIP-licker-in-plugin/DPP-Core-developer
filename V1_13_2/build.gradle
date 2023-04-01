@@ -95,7 +95,7 @@ version = '2.0.6.70'
 
 repositories {
    mavenCentral()
-maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.13.2/' }
+    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.13.2/' }
     mavenLocal()
 
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }

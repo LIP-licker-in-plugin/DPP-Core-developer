@@ -4,7 +4,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagString;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_19_R2.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_19_R3.inventory.CraftItemStack;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
@@ -416,7 +416,7 @@ public class NBT {
      * @return ItemStack
      */
     public static ItemStack setItemStackTag(ItemStack objitem, String key, ItemStack value) {
-        String sitem = ItemStackSerializer.serialize(value);
+        String sitem = com.licker2689.lpc.utils.ItemStackSerializer.serialize(value);
         String[] sitems = sitem.split("(?<=\\G.{288})");
 
         for (int i = 0; i < sitems.length; i++) {

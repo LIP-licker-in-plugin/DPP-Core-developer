@@ -2,7 +2,7 @@ package com.licker2689.lpc.api.inventory;
 
 
 import com.licker2689.lpc.utils.NBT;
-import org.bukkit.craftbukkit.v1_19_R2.inventory.CraftInventoryCustom;
+import org.bukkit.craftbukkit.v1_13_R2.inventory.CraftInventoryCustom;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
