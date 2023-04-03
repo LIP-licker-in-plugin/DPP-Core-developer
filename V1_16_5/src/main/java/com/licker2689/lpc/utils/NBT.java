@@ -1,10 +1,10 @@
 package com.licker2689.lpc.utils;
 
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagString;
+import net.minecraft.server.v1_16_R3.NBTTagCompound;
+import net.minecraft.server.v1_16_R3.NBTTagString;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_19_R2.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftItemStack;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
@@ -17,24 +17,19 @@ import java.util.Map;
 
 @SuppressWarnings("all")
 public class NBT {
-    
-    public static NBTTagCompound getTagCompound(net.minecraft.world.item.ItemStack item) {
-        return item.t() ? item.u() : new NBTTagCompound();
-    }
 
     /**
      * @param objitem require ItemStack
      * @param key     require String
      * @param value   will be cast as String
      * @return ItemStack
-     *
      */
     @NotNull
     public static ItemStack setObjectTag(ItemStack objitem, String key, Object value) {
-        final net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        final NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, NBTTagString.a(value.toString()));
-        item.c(ntc);
+        final net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        final NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.set(key, NBTTagString.a(value.toString()));
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -45,21 +40,22 @@ public class NBT {
      */
     @NotNull
     public static ItemStack removeTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        item.c(ntc);
-        item.c(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        item.setTag(ntc);
+        item.removeTag(key);
         return CraftItemStack.asBukkitCopy(item);
     }
 
+
     @NotNull
     public static ItemStack removeAllTags(ItemStack objitem) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        for (String key : ntc.e()) {
-            item.c(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        for (String key : ntc.getKeys()) {
+            item.removeTag(key);
         }
-        item.c(ntc);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -70,9 +66,9 @@ public class NBT {
      */
     @NotNull
     public static String getStringTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.l(key).replace('"', ' ').trim();
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getString(key).replace('"', ' ').trim();
     }
 
     /**
@@ -82,9 +78,9 @@ public class NBT {
      */
     @NotNull
     public static byte getByteTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.f(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getByte(key);
     }
 
     /**
@@ -94,9 +90,9 @@ public class NBT {
      */
     @NotNull
     public static short getShortTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.f(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getShort(key);
     }
 
     /**
@@ -106,9 +102,9 @@ public class NBT {
      */
     @NotNull
     public static int getIntegerTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.h(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getInt(key);
     }
 
     /**
@@ -118,9 +114,9 @@ public class NBT {
      */
     @NotNull
     public static float getFloatTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.j(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getFloat(key);
     }
 
     /**
@@ -130,20 +126,20 @@ public class NBT {
      */
     @NotNull
     public static double getDoubleTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.k(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getDouble(key);
     }
 
     /**
      * @param objitem ItemStack
-     * @param key     String
+     * @param key    String
      * @return boolean
      */
     public static boolean getBooleanTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.q(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getBoolean(key);
     }
 
     /**
@@ -153,9 +149,9 @@ public class NBT {
      */
     @NotNull
     public static long getLongTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.i(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getLong(key);
     }
 
     /**
@@ -165,9 +161,9 @@ public class NBT {
      */
     @NotNull
     public static byte[] getByteArrayTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.m(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getByteArray(key);
     }
 
     /**
@@ -177,9 +173,9 @@ public class NBT {
      */
     @NotNull
     public static int[] getIntArrayTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.n(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getIntArray(key);
     }
 
     /**
@@ -189,9 +185,9 @@ public class NBT {
      */
     @NotNull
     public static NBTTagCompound getCompoundTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.p(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.getCompound(key);
     }
 
     /**
@@ -201,9 +197,9 @@ public class NBT {
      */
     @Nullable
     public static Material getMaterialTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return Material.getMaterial(ntc.l(key));
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return Material.getMaterial(ntc.getString(key));
     }
 
     /**
@@ -213,9 +209,9 @@ public class NBT {
      */
     @Nullable
     public static InventoryType getInventoryTypeTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return InventoryType.valueOf(ntc.l(key));
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return InventoryType.valueOf(ntc.getString(key));
     }
 
     /**
@@ -225,9 +221,9 @@ public class NBT {
      */
     @Nullable
     public static EntityType getEntityTypeTag(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return EntityType.valueOf(ntc.l(key));
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return EntityType.valueOf(ntc.getString(key));
     }
 
     /**
@@ -236,21 +232,21 @@ public class NBT {
      * @return boolean
      */
     public static boolean hasTagKey(ItemStack objitem, String key) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        return ntc.e(key);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        return ntc.hasKey(key);
     }
 
     @Nullable
     public static Map<String, String> getAllStringTag(ItemStack objitem) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        if (ntc.e().size() == 0) {
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        if(ntc.getKeys().size() == 0) {
             return null;
         }
         Map<String, String> tags = new HashMap<>();
-        for (String key : ntc.e()) {
-            tags.put(key, ntc.c(key).toString());
+        for (String key : ntc.getKeys()) {
+            tags.put(key, ntc.get(key).toString());
         }
         return tags;
     }
@@ -263,10 +259,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setStringTag(ItemStack objitem, String key, String value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setString(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -278,10 +274,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setByteTag(ItemStack objitem, String key, byte value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setByte(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -293,10 +289,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setShortTag(ItemStack objitem, String key, short value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setShort(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -308,10 +304,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setIntTag(ItemStack objitem, String key, int value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setInt(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -323,10 +319,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setLongTag(ItemStack objitem, String key, long value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setLong(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -338,10 +334,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setFloatTag(ItemStack objitem, String key, float value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setFloat(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -353,10 +349,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setDoubleTag(ItemStack objitem, String key, double value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setDouble(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -368,10 +364,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setByteArrayTag(ItemStack objitem, String key, byte[] value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setByteArray(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -383,10 +379,10 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setIntArrayTag(ItemStack objitem, String key, int[] value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value);
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setIntArray(key, value);
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
@@ -398,16 +394,14 @@ public class NBT {
      */
     @NotNull
     public static ItemStack setMaterialTag(ItemStack objitem, String key, Material value) {
-        net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(objitem);
-        NBTTagCompound ntc = getTagCompound(item);
-        ntc.a(key, value.name());
-        item.c(ntc);
+        net.minecraft.server.v1_16_R3.ItemStack item = CraftItemStack.asNMSCopy(objitem);
+        NBTTagCompound ntc = item.hasTag() ? item.getTag() : new NBTTagCompound();
+        ntc.setString(key, value.name());
+        item.setTag(ntc);
         return CraftItemStack.asBukkitCopy(item);
     }
 
     // ItemStackSerializer
-
-    // Single ItemStack
 
     /**
      * @param objitem ItemStack
@@ -417,10 +411,11 @@ public class NBT {
      */
     public static ItemStack setItemStackTag(ItemStack objitem, String key, ItemStack value) {
         String sitem = ItemStackSerializer.serialize(value);
+        // split sitem by 255 char
         String[] sitems = sitem.split("(?<=\\G.{288})");
 
         for (int i = 0; i < sitems.length; i++) {
-            objitem = NBT.setStringTag(objitem, key + i, sitems[i]);
+            objitem = NBT.setStringTag(objitem, key+i, sitems[i]);
         }
         objitem = NBT.setIntTag(objitem, key + "_size", sitems.length);
         return objitem;

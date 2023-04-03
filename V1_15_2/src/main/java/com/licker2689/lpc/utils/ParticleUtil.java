@@ -1,14 +1,11 @@
 package com.licker2689.lpc.utils;
 
 import com.licker2689.lpc.LPCore;
-import net.minecraft.core.particles.Particles;
-import net.minecraft.network.protocol.game.PacketPlayOutWorldParticles;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.FireworkEffect.Type;
 import org.bukkit.Location;
 import org.bukkit.Particle;
-import org.bukkit.craftbukkit.v1_19_R2.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
@@ -23,13 +20,6 @@ import static java.lang.Math.sin;
 public class ParticleUtil {
     private static final LPCore plugin = LPCore.getInstance();
     private final static BukkitScheduler scheduler = plugin.getServer().getScheduler();
-
-    public static void sendParticlePacket(Location loc) {
-        PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles(Particles.g, false, loc.getX(), loc.getY(), loc.getZ(), 0, 0, 0, 0, 0);
-        for (Player p : loc.getWorld().getPlayers()) {
-            ((CraftPlayer) p).getHandle().b.a(packet);
-        }
-    }
 
     public static void createParticle(Entity p, Particle pp, Location loc, double ox, double oy, double oz, int count,
                                       double extra) {
@@ -421,3 +411,4 @@ public class ParticleUtil {
     }
 
 }
+

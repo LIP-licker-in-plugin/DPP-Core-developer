@@ -95,9 +95,9 @@ version = '2.0.6.70'
 
 repositories {
    mavenCentral()
-    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.13.2/' }
     mavenLocal()
-
+    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.13.2/' }
+    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-api-1.13.2/' }
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
@@ -145,6 +145,9 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'net.dv8tion:JDA:5.0.0-alpha.22'
+    compileOnly 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT'
+    // The Spigot API with no shadowing. Requires the OSS repo.
+    compileOnly 'org.spigotmc:spigot:1.13.2-R0.1-SNAPSHOT'
 }
 
 test {
