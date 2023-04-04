@@ -82,16 +82,13 @@ publishing {
         maven {
             url "http://licker2689.kro.kr:8081/repository/lip-release/"
             allowInsecureProtocol = true
-            credentials({
-                username = "lickernoy"
-                password = "licker1389"
-            }
-            )
+
+
         }
     }
 }
 group 'github.com/licker2689'
-version = '2.0.6.70'
+version = '2.0.6.71'
 
 
 compileJava.options.encoding = 'UTF-8'

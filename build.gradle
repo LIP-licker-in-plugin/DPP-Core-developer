@@ -5,8 +5,8 @@ plugins {
 }
 
 configurations {
-    jar.archiveName = 'LP-Core-_v1_19_3-SNAPSHOT.jar'
-    shadowJar.archiveName = 'LP-Core-_v1_19_3-SNAPSHOT.jar'
+    jar.archiveName = 'LP-Core-_v1_19_4-SNAPSHOT.jar'
+    shadowJar.archiveName = 'LP-Core-_v1_19_4-SNAPSHOT.jar'
 }
 jar {
     finalizedBy shadowJar
@@ -76,20 +76,23 @@ publishing {
             artifactId = 'LP-Core'
             version = 'R0.1'
             artifact('jars/' + jar.archiveName) {
-                classifier '1.19.3'
+                classifier '1.19.4'
             }
         }
     }
-    repositories {
+repositories {
         maven {
             url "http://licker2689.kro.kr:8081/repository/lip-release/"
             allowInsecureProtocol = true
-
+			credentials {
+                username = "lickernoy"
+                password = "licker1389"
+        }
         }
     }
 }
 group 'github.com/licker2689'
-version = '2.0.6.70'
+version = '2.0.6.71'
 
 
 compileJava.options.encoding = 'UTF-8'
@@ -140,7 +143,7 @@ task DS_BUILD {
 
 repositories {
     mavenCentral()
-    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot/' }
+    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.19.4/' }
     mavenLocal()
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
     maven {

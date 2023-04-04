@@ -69,22 +69,20 @@ shadowJar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.licker2689'
+            groupId = 'com.licker2689.lpc'
             artifactId = 'LP-Core'
             version = 'R0.1'
-            artifact('../jars/' + "LP-Core-_v1_12_2-SNAPSHOT.jar")
-                    { classifier '1.12.2' }
+            artifact('../jars/' + jar.archiveName) {
+                classifier '1.12.2'
+            }
         }
     }
     repositories {
         maven {
             url "http://licker2689.kro.kr:8081/repository/lip-release/"
             allowInsecureProtocol = true
-            credentials({
-                username = "lickernoy"
-                password = "licker1389"
-            }
-            )
+
+
         }
     }
 }
@@ -100,7 +98,7 @@ build {
 }
 
 group 'github.com/licker2689'
-version = '2.0.6.70'
+version = '2.0.6.71'
 
 repositories {
     mavenCentral()
