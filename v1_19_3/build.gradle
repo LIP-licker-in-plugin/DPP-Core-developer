@@ -5,8 +5,8 @@ plugins {
 }
 
 configurations {
-    jar.archiveName = 'LP-Core-_v1_19_2-SNAPSHOT.jar'
-    shadowJar.archiveName = 'LP-Core-_v1_19_2-SNAPSHOT.jar'
+    jar.archiveName = 'LP-Core-_v1_19_3-SNAPSHOT.jar'
+    shadowJar.archiveName = 'LP-Core-_v1_19_3-SNAPSHOT.jar'
 }
 jar {
     finalizedBy shadowJar
