@@ -103,6 +103,14 @@ version = '2.0.6.71'
 repositories {
     mavenCentral()
     mavenLocal()
+    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.12.2/'
+        credentials {
+            username providers.gradleProperty('github.username').get()
+            password providers.gradleProperty('github.token').get()
+        }
+        authentication {
+            digest(BasicAuthentication)
+        } }
     maven { url = 'https://repo.papermc.io/repository/maven-public/' }
     maven {
         url "https://org.bstats/bstats-bukkit"
