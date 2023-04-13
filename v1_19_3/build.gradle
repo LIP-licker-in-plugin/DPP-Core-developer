@@ -71,7 +71,7 @@ shadowJar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.licker2689'
+            groupId = 'com.licker2689.lpc'
             artifactId = 'LP-Core'
             version = 'R0.1'
             artifact('../jars/' + "LP-Core-_v1_19_3-SNAPSHOT.jar")
@@ -82,7 +82,10 @@ publishing {
         maven {
             url "http://licker2689.kro.kr:8081/repository/lip-release/"
             allowInsecureProtocol = true
-
+            credentials {
+                username = "lickernoy"
+                password = "licker1389"
+            }
 
         }
     }
@@ -104,6 +107,14 @@ build {
 repositories {
     mavenCentral()
     maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-1.19.3/'
+        credentials {
+            username providers.gradleProperty('github.username').get()
+            password providers.gradleProperty('github.token').get()
+        }
+        authentication {
+            digest(BasicAuthentication)
+        } }
+    maven { url = 'https://raw.githubusercontent.com/LIP-licker-in-plugin/library-mirror/spigot-api-1.19.3/'
         credentials {
             username providers.gradleProperty('github.username').get()
             password providers.gradleProperty('github.token').get()

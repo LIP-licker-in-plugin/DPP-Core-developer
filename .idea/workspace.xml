@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24f44bb2-9e90-4bdf-9e11-52dc92ede417" name="변경" comment="fix: fix ver">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="24f44bb2-9e90-4bdf-9e11-52dc92ede417" name="변경" comment="fix: fix version">
+      <change beforePath="$PROJECT_DIR$/v1_19_3/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19_3/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,25 +53,12 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="LP-Core-developer" type="f1a62948:ProjectNode" />
-                <item name="v1_19_3" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LP-Core-developer" type="f1a62948:ProjectNode" />
-                <item name="v1_19_3" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="LP-Core-developer" type="f1a62948:ProjectNode" />
-                <item name="v1_19_3" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LP-Core-developer" type="f1a62948:ProjectNode" />
-                <item name="v1_19_3" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
@@ -107,21 +93,21 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nlead/Documents/GitHub/DPP-Core-developer/src/main/java/com/licker2689/lpc/utils",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nlead/Documents/GitHub/DPP-Core-developer/src/main/java/com/licker2689/lpc/utils&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nlead\Documents\GitHub\DPP-Core-developer\src\main\java\com\licker2689\lpc\utils" />
@@ -130,8 +116,32 @@
       <recent name="D:\LP-Core-developer\v1_19_2\src\main\java\com\licker2689" />
       <recent name="D:\LP-Core-developer\v1_18_2\src\main\java\com\licker2689" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.licker2689.lpc.utils" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.DPP-Core-developer [jar]">
+  <component name="RunManager" selected="Gradle.DPP-Core-developer [DS_BUILD]">
+    <configuration name="DPP-Core-developer [DS_BUILD]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="DS_BUILD" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="DPP-Core-developer [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -144,6 +154,27 @@
         <option name="taskNames">
           <list>
             <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DPP-Core-developer [publish]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publish" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,6 +228,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DPP-Core-developer [DS_BUILD]" />
+        <item itemvalue="Gradle.DPP-Core-developer [publish]" />
         <item itemvalue="Gradle.DPP-Core-developer [jar]" />
         <item itemvalue="Gradle.DPP-Core-developer:v1_19_3 [publish]" />
         <item itemvalue="Gradle.DPP-Core-developer:v1_19_3 [jar]" />
@@ -305,7 +338,56 @@
       <option name="project" value="LOCAL" />
       <updated>1680333315310</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix: fix ver and maven">
+      <created>1680535548571</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680535548571</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix: fix ver and maven">
+      <created>1680617003319</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680617003319</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix: fix ver and maven">
+      <created>1680618656913</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680618656913</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix: fix maven">
+      <created>1680619124717</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680619124717</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: fix dependency">
+      <created>1680619450074</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680619450074</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: fix dependency">
+      <created>1680619578221</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680619578221</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix: fix version">
+      <created>1680620067992</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680620067992</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,8 +409,11 @@
     <MESSAGE value="2.0.70 fix ver" />
     <MESSAGE value="fix : fix maven url" />
     <MESSAGE value="update: update nms" />
-    <MESSAGE value="fix: fix maven" />
     <MESSAGE value="fix: fix ver" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix ver" />
+    <MESSAGE value="fix: fix ver and maven" />
+    <MESSAGE value="fix: fix maven" />
+    <MESSAGE value="fix: fix dependency" />
+    <MESSAGE value="fix: fix version" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fix version" />
   </component>
 </project>
