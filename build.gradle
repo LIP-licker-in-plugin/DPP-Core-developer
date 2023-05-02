@@ -84,10 +84,10 @@ repositories {
         maven {
             url "http://licker2689.kro.kr:8081/repository/lip-release/"
             allowInsecureProtocol = true
-			credentials {
-                username = "lickernoy"
-                password = "licker1389"
-        }
+			
+
+
+
         }
     }
 }

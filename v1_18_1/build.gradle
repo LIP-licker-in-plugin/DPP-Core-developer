@@ -77,12 +77,16 @@ publishing {
             }
         }
     }
-    repositories {
+repositories {
         maven {
             url "http://licker2689.kro.kr:8081/repository/lip-release/"
             allowInsecureProtocol = true
+			
 
-        }    }
+
+
+        }
+    }
 }
 compileJava.options.encoding = 'UTF-8'
 tasks.withType(JavaCompile) {
