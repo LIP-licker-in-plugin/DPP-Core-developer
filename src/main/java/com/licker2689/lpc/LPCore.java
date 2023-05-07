@@ -63,7 +63,7 @@ public class LPCore extends JavaPlugin {
         } else {
             ess = (Essentials) pl;
         }
-        Bukkit.getScheduler().runTaskLater(plugin, () -> enabledPlugins.keySet().forEach(SchedulerUtils::initUpdateChecker), 1200L);
+//        Bukkit.getScheduler().runTaskLater(plugin, () -> enabledPlugins.keySet().forEach(SchedulerUtils::initUpdateChecker), 1200L);
         getCommand("lpc").setExecutor(new LPCCommand());
     }
 

@@ -11,5 +11,5 @@ loadbefore:
   - LP-VirtualStorage
   - LP-SimplePrefix
 commands:
-  lppc:
+  lpc:
 description: this plugin is include AnvilGUI from https://github.com/WesJD/AnvilGUI
